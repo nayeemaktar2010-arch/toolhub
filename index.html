@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimized Title & Description -->
+    <title>Free Online Tools: Age, BMI, EMI, Discount, Interest, Unit Converter & Word Counter</title>
+    <meta name="description" content="100% Free professional tools: Age Calculator, BMI, EMI, Discount, Simple Interest, Unit Converter, Word & Character Counter. No signup, no ads popup, instant results.">
+    <meta name="keywords" content="free age calculator, bmi calculator, emi calculator, discount calculator, simple interest, unit converter, word counter, free tools online">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FreeTools">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Free Online Tools - All in One Calculator">
+    <meta property="og:description" content="Calculate Age, BMI, EMI, Discount, Interest, Units & Count Words - All Free!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/">
+
+    <!-- Google Fonts - Bold & Stylish -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --yellow: #FFD700;
+            --red: #FF0000;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        header {
+            background: var(--yellow);
+            color: var(--red);
+            text-align: center;
+            padding: 20px;
+            font-size: 2.2em;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--yellow);
+            padding: 10px;
+            gap: 10px;
+        }
+        .tab-btn {
+            background: var(--white);
+            color: var(--red);
+            border: 3px solid var(--red);
+            padding: 12px 20px;
+            font-weight: 900;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--red);
+            color: var(--white);
+        }
+        .tab-content {
+            display: none;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background: var(--white);
+            border: 4px solid var(--yellow);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .tab-content.active { display: block; }
+        h2 { color: var(--red); font-size: 2em; margin-bottom: 20px; text-align: center; }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            border: 2px solid var(--yellow);
+            border-radius: 10px;
+        }
+        button {
+            background: var(--yellow);
+            color: var(--red);
+            cursor: pointer;
+            font-size: 1.3em;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: var(--red);
+            color: white;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--yellow);
+            color: var(--black);
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            border-radius: 10px;
+            min-height: 60px;
+        }
+        .ad {
+            background: var(--yellow);
+            color: var(--red);
+            text-align: center;
+            padding: 20px;
+            margin: 30px auto;
+            font-weight: 900;
+            font-size: 1.3em;
+            border: 3px dashed var(--red);
+            max-width: 800px;
+        }
+        footer {
+            background: var(--yellow);
+            color: var(--red);
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-weight: 900;
+        }
+        @media (max-width: 600px) {
+            .tab-btn { font-size: 0.9em; padding: 10px 15px; }
+            header { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+<header>FREE TOOLS HUB</header>
+
+<div class="tabs">
+    <button class="tab-btn active" onclick="openTab('age')">Age</button>
+    <button class="tab-btn" onclick="openTab('bmi')">BMI</button>
+    <button class="tab-btn" onclick="openTab('emi')">EMI</button>
+    <button class="tab-btn" onclick="openTab('discount')">Discount</button>
+    <button class="tab-btn" onclick="openTab('interest')">Interest</button>
+    <button class="tab-btn" onclick="openTab('unit')">Unit</button>
+    <button class="tab-btn" onclick="openTab('word')">Word Counter</button>
+</div>
+
+<!-- Age Calculator -->
+<div id="age" class="tab-content active">
+    <h2>Age Calculator</h2>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div class="result" id="ageResult">Your age will appear here</div>
+</div>
+
+<!-- BMI Calculator -->
+<div id="bmi" class="tab-content">
+    <h2>BMI Calculator</h2>
+    <input type="number" id="weight" placeholder="Weight in kg">
+    <input type="number" id="height" placeholder="Height in cm">
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div class="result" id="bmiResult">Your BMI will appear here</div>
+</div>
+
+<!-- EMI Calculator -->
+<div id="emi" class="tab-content">
+    <h2>EMI Calculator</h2>
+    <input type="number" id="principal" placeholder="Loan Amount ₹">
+    <input type="number" id="rate" placeholder="Annual Interest Rate %">
+    <input type="number" id="tenure" placeholder="Tenure in Years">
+    <button onclick="calculateEMI()">Calculate EMI</button>
+    <div class="result" id="emiResult">Monthly EMI will appear here</div>
+</div>
+
+<!-- Discount Calculator -->
+<div id="discount" class="tab-content">
+    <h2>Discount Calculator</h2>
+    <input type="number" id="original" placeholder="Original Price ₹">
+    <input type="number" id="discountPercent" placeholder="Discount %">
+    <button onclick="calculateDiscount()">Calculate</button>
+    <div class="result" id="discountResult">Final price will appear here</div>
+</div>
+
+<!-- Simple Interest -->
+<div id="interest" class="tab-content">
+    <h2>Simple Interest Calculator</h2>
+    <input type="number" id="p" placeholder="Principal ₹">
+    <input type="number" id="r" placeholder="Rate % per year">
+    <input type="number" id="t" placeholder="Time in Years">
+    <button onclick="calculateSI()">Calculate</button>
+    <div class="result" id="siResult">Interest & Total will appear here</div>
+</div>
+
+<!-- Unit Converter -->
+<div id="unit" class="tab-content">
+    <h2>Unit Converter (Length)</h2>
+    <input type="number" id="value" placeholder="Value">
+    <select id="fromUnit"><option>cm</option><option>m</option><option>km</option><option>inch</option><option>feet</option></select>
+    <select id="toUnit"><option>cm</option><option>m</option><option>km</option><option>inch</option><option>feet</option></select>
+    <button onclick="convertUnit()">Convert</button>
+    <div class="result" id="unitResult">Result will appear here</div>
+</div>
+
+<!-- Word Counter -->
+<div id="word" class="tab-content">
+    <h2>Word & Character Counter</h2>
+    <textarea id="textArea" placeholder="Paste your text here..." rows="8"></textarea>
+    <button onclick="countWords()">Count Words</button>
+    <div class="result" id="wordResult">Words: 0 | Characters: 0</div>
+</div>
+
+<!-- Ad Space (Replace with Real AdSense Later) -->
+<div class="ad">YOUR ADS HERE → Replace with Google AdSense Code</div>
+
+<footer>© 2025 Free Tools Hub • 100% Free Forever</footer>
+
+<script>
+function openTab(tabName) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabName).classList.add('active');
+    document.querySelector(`button[onclick="openTab('${tabName}')"]`).classList.add('active');
+}
+
+// All Calculators Functions
+function calculateAge() {
+    const birth = new Date(document.getElementById('birthdate').value);
+    const today = new Date();
+    let age = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+    document.getElementById('ageResult').innerHTML = `You are <strong>${age}</strong> years old`;
+}
+
+function calculateBMI() {
+    const w = parseFloat(document.getElementById('weight').value);
+    const h = parseFloat(document.getElementById('height').value) / 100;
+    const bmi = (w / (h * h)).toFixed(2);
+    let cat = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal" : bmi < 30 ? "Overweight" : "Obese";
+    document.getElementById('bmiResult').innerHTML = `BMI: <strong>${bmi}</strong> → ${cat}`;
+}
+
+function calculateEMI() {
+    const p = parseFloat(document.getElementById('principal').value);
+    const r = parseFloat(document.getElementById('rate').value) / 1200;
+    const n = parseFloat(document.getElementById('tenure').value) * 12;
+    const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    document.getElementById('emiResult').innerHTML = `Monthly EMI: <strong>₹${emi.toFixed(0)}</strong>`;
+}
+
+function calculateDiscount() {
+    const op = parseFloat(document.getElementById('original').value);
+    const dp = parseFloat(document.getElementById('discountPercent').value);
+    const save = op * (dp / 100);
+    const final = op - save;
+    document.getElementById('discountResult').innerHTML = `You Save: ₹${save.toFixed(2)}<br>Final Price: <strong>₹${final.toFixed(2)}</strong>`;
+}
+
+function calculateSI() {
+    const p = parseFloat(document.getElementById('p').value);
+    const r = parseFloat(document.getElementById('r').value) / 100;
+    const t = parseFloat(document.getElementById('t').value);
+    const interest = p * r * t;
+    document.getElementById('siResult').innerHTML = `Interest: ₹${interest.toFixed(2)}<br>Total Amount: <strong>₹${(p + interest).toFixed(2)}</strong>`;
+}
+
+function convertUnit() {
+    let value = parseFloat(document.getElementById('value').value);
+    const from = document.getElementById('fromUnit').value;
+    const to = document.getElementById('toUnit').value;
+    
+    const toMeter = { cm: 0.01, m: 1, km: 1000, inch: 0.0254, feet: 0.3048 };
+    const result = value * toMeter[from] / toMeter[to];
+    
+    document.getElementById('unitResult').innerHTML = `<strong>${result.toFixed(4)}</strong> ${to}`;
+}
+
+function countWords() {
+    const text = document.getElementById('textArea').value;
+    const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+    const chars = text.length;
+    document.getElementById('wordResult').innerHTML = `Words: <strong>${words}</strong> | Characters: <strong>${chars}</strong>`;
+}
+</script>
+
+</body>
+  </html>
