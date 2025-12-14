@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nayeemaktar2010-arch.github.io/toolhub/
